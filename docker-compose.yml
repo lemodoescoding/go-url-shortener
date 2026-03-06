@@ -1,0 +1,13 @@
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: my-project-redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    # command: redis-server --requirepass yourpassword  # Uncomment to add a password
+
+volumes:
+  redis_data:
